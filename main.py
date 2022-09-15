@@ -1,3 +1,4 @@
+import time
 #COLORES
 BLACK = '\033[30m'
 YELLOW = '\033[33m'
@@ -15,12 +16,11 @@ print("\n INSTRUCCIONES: \n")
 print("1) Comienzas con puntaje cero (0) \n")
 print("2) Por cada respuesta correcta se suma 4 puntos \n")
 print("3) Por cada respuesta incorrecta se resta dos\n")
-print("4) Se asignará un puntaje aleatorio, el cual será sumado en caso de ser correcta la respuesta o restado en caso de ser incorrecta la respuesta")
+print("4) Se asignará un puntaje aleatorio entre 1 y 3, el cual será sumado en caso de ser correcta la respuesta o restado en caso de ser incorrecta la respuesta")
 print ("Pongamos a prueba tus conocimientos \n"+RESET)
 
 # Instrucciones sobre cómo jugar:
 print ("Responder las siguientes preguntas escribiendo la letra de la alternativa y presionando 'Enter' para enviar tu respuesta:\n")
-import time
 
 print("Cuál es tú nombre: \n")
 nombre = input()
@@ -28,11 +28,10 @@ time.sleep(1.2)
 print("\n¡Bienvenido ",nombre,"!"," \nComenzaremos la TRIVIA DEL HINCHA PERUANO \n")
 #CICLO DEL JUEGO
 while iniciar_trivia == True:
-  #RANDOM
-  import random
   intentos+=1
   puntaje=0
-
+  #RANDOM
+  import random
   print("\nIntento número: ",intentos)
   input("Presiona Enter para comenzar\n")
 
@@ -47,7 +46,7 @@ while iniciar_trivia == True:
   # Verificamos que el usuario haya seleccionado una de las alternativas, de lo contrario la pregunta se repite
   while respuesta_1 not in ("a","b","c","d"):
     respuesta_1 = input("Debes responder a, b, c o d. Ingresa nuevamente tu respuesta\n").lower()
-  bonus = random.randint(0,3)
+  bonus = random.randint(1,3)
   #Calificamos la respuesta del usuario
   if respuesta_1 == "c":
     print("¡Bien",nombre,"!")
@@ -71,7 +70,7 @@ while iniciar_trivia == True:
   # Verificamos que el usuario haya seleccionado una de las alternativas, de lo contrario la pregunta se repite
   while respuesta_2 not in ("a","b","c","d"):
     respuesta_2 = input("Debes responder a, b, c o d. Ingresa nuevamente tu respuesta\n").lower()
-  bonus2 = random.randint(0,3)
+  bonus2 = random.randint(1,3)
   #Calificamos la respuesta 2
   if respuesta_2 == "b":
     print("¡Correcto",nombre,"!")
@@ -95,7 +94,7 @@ while iniciar_trivia == True:
   # Verificamos que el usuario haya seleccionado una de las alternativas, de lo contrario la pregunta se repite
   while respuesta_3 not in ("a","b","c","d"):
     respuesta_3 = input("Debes responder a, b, c o d. Ingresa nuevamente tu respuesta\n").lower()
-  bonus3 = random.randint(0,3)
+  bonus3 = random.randint(1,3)
   #Calificamos la respuesta 3
   if respuesta_3 == "a":
     print("¡Muy bien",nombre,"!")
@@ -119,7 +118,7 @@ while iniciar_trivia == True:
   # Verificamos que el usuario haya seleccionado una de las alternativas, de lo contrario la pregunta se repite
   while respuesta_4 not in ("a","b","c","d"):
     respuesta_4 = input("Debes responder a, b, c o d. Ingresa nuevamente tu respuesta\n").lower()
-  bonus4 = random.randint(0,3)
+  bonus4 = random.randint(1,3)
   #Calificamos la respuesta 4
   if respuesta_4 == "d":
     print("¡Correcto",nombre,"!")
@@ -143,7 +142,7 @@ while iniciar_trivia == True:
   # Verificamos que el usuario haya seleccionado una de las alternativas, de lo contrario la pregunta se repite
   while respuesta_5 not in ("a","b","c","d"):
     respuesta_5 = input("Debes responder a, b, c o d. Ingresa nuevamente tu respuesta\n").lower()
-  bonus5 = random.randint(0,3)
+  bonus5 = random.randint(1,3)
   #Calificamos la respuesta 5
   if respuesta_5 == "c":
     print("¡Genial",nombre,"!")
